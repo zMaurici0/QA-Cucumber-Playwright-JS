@@ -12,7 +12,10 @@
   "type": "commonjs",
   "devDependencies": {
     "@cucumber/cucumber": "^12.9.0",
+    "@cucumber/html-formatter": "^23.1.0",
     "@playwright/test": "^1.60.0",
-    "@types/node": "^25.9.1"
+    "@types/node": "^25.9.1",
+    "allure-commandline": "^2.42.0",
+    "allure-cucumberjs": "^3.9.0"
   }
 }
