@@ -1,29 +1,34 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { chromium, expect } = require('@playwright/test');
+const { LoginPage } = require('../../pages/loginPage');
 
 let browser;
 let page;
 
-Given('estou na página de login', async function () {
+Given('O osuário está na página de login', async function () {
   browser = await chromium.launch({ headless: false });
   page = await browser.newPage();
 
-  await page.goto('https://www.saucedemo.com/');
+  loginPage = new LoginPage(page);
+  await loginPage.goto();
+  await loginPage.confirmLoginPage();
 });
 
-When('eu insiro meu {string} e um {string}', async function (username, password) {
-  await page.locator('#user-name').fill(username);
-  await page.locator('#password').fill(password);
-  await page.locator('#login-button').click();
+When('e insere um "username" e um "password" válidos', async function () {
+  await loginPage.login('standard_user', 'secret_sauce');
 });
 
-Then('eu tenho um login com sucesso', async function () {
-  await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
+Then('o login é bem-sucedido e o usuário é redirecionado para a página inicial', async function () {
+  await loginPage.confirmHomePage();
   await browser.close();
 });
 
-Then('eu vejo uma mensagem de erro indicando falha no login', async function () {
-  const MensagemErro = await page.locator('[data-test="error"]').textContent();
-  await expect(MensagemErro).toContain('Epic sadface: Username and password do not match any user in this service');
+
+When('e insere um "username" e um "password" inválidos', async function () {
+  await loginPage.login('invalid_user', 'invalid_password');
+});
+
+Then('o login falha e uma mensagem de erro é exibida', async function () {
+  await loginPage.checkErrorMessage();
   await browser.close();
 });

@@ -2,11 +2,11 @@
 Feature: Login
 
   Scenario: Login Válido
-    Given estou na página de login
-    When eu insiro meu "standard_user" e um "secret_sauce"
-    Then eu tenho um login com sucesso
+    Given O osuário está na página de login
+    When e insere um "username" e um "password" válidos
+    Then o login é bem-sucedido e o usuário é redirecionado para a página inicial
 
   Scenario: Login Inválido
-    Given estou na página de login
-    When eu insiro meu "standard_user" e um "wrong_password"
-    Then eu vejo uma mensagem de erro indicando falha no login
+    Given O usuário está na página de login
+    When e insere um "username" e um "password" inválidos
+    Then o login falha e uma mensagem de erro é exibida

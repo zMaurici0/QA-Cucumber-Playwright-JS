@@ -12,6 +12,22 @@ class LoginPage {
     await this.password.fill(password);
     await this.loginButton.click();
   }
+
+  async goto(){
+    await this.page.goto('https://www.saucedemo.com/');
+  }
+
+  async confirmLoginPage(){
+    await expect(this.page).toHaveURL('https://www.saucedemo.com/');
+  }
+
+  async confirmHomePage(){
+    await expect(this.page).toHaveURL('https://www.saucedemo.com/inventory.html');
+  }
+
+  async checkErrorMessage(){
+    await expect(this.page.locator('[data-test="error"]')).toBeVisible();
+  }
 }
 
 module.exports = { LoginPage };
