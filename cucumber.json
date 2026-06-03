@@ -2,6 +2,11 @@
   "default": {
     "require": ["tests/step_definitions/*.js"],
     "paths": ["tests/features/*.feature"],
-    "format": ["html:reports/report.html","progress-bar"]
+    "format": [
+      "allure-cucumberjs/reporter"
+    ],
+    "formatOptions": {
+      "resultsDir": "allure-results"
+    }
   }
-} 
+}
