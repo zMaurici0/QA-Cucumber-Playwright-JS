@@ -1,5 +1,3 @@
-const {expect} = require('@playwright/test');
-
 class LogoutPage {
   constructor(page) {
     this.page = page;

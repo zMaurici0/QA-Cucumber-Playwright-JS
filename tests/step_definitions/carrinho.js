@@ -16,10 +16,10 @@ Given('O usuário está na página de um produto', async function () {
   browser = await chromium.launch({ headless: false });
   page = await browser.newPage();
 
-  login = new LoginPage(page);
-  await login.goto();
-  await login.login('standard_user', 'secret_sauce');
-  await login.confirmHomePage();
+  loginPage = new LoginPage(page);
+  await loginPage.goto();
+  await loginPage.login('standard_user', 'secret_sauce');
+  await loginPage.confirmHomePage();
 
   carrinhoPage = new CarrinhoPage(page);
   await carrinhoPage.gotoProductPage();
