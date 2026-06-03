@@ -1,11 +1,12 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-const { chromium, expect } = require('@playwright/test');
+const { chromium } = require('@playwright/test');
 const { LoginPage } = require('../../pages/loginPage');
 
 let browser;
 let page;
+let loginPage;
 
-Given('O osuário está na página de login', async function () {
+Given('O usuário está na página de login', async function () {
   browser = await chromium.launch({ headless: false });
   page = await browser.newPage();
 
@@ -15,6 +16,7 @@ Given('O osuário está na página de login', async function () {
 });
 
 When('e insere um "username" e um "password" válidos', async function () {
+  await loginPage.goto();
   await loginPage.login('standard_user', 'secret_sauce');
 });
 
