@@ -152,7 +152,7 @@ QA-CUCUMBER-PLAYWRIGHT-JS/
 ### Clonar o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/QA-CUCUMBER-PLAYWRIGHT-JS.git
+git clone https://https://github.com/zMaurici0/QA-Cucumber-Playwright-JS.git
 ```
 
 ### Instalar as dependências
