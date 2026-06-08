@@ -3,7 +3,9 @@
     "require": ["tests/step_definitions/*.js"],
     "paths": ["tests/features/*.feature"],
     "format": [
-      "allure-cucumberjs/reporter"
+      "progress-bar",
+      "allure-cucumberjs/reporter",
+      "html:reports/cucumber-report.html"
     ],
     "formatOptions": {
       "resultsDir": "allure-results"

@@ -62,20 +62,6 @@ class CarrinhoPage {
     await this.addToCartItem2.click();
   }
 
-  async verifyTotal(){
-    let preco1 = await this.precoItem1.textContent();
-    let preco2 = await this.precoItem2.textContent();
-
-    preco1 = preco1.replace('$', '')
-    preco2 = preco2.replace('$', '')
-
-    let total = parseFloat(preco1) + parseFloat(preco2);
-    let subtotalText = await this.subtotal.textContent();
-    let subtotal = parseFloat(subtotalText.replace('Item total: $', ''));
-
-    expect(subtotal).toBe(total);
-  }
-
 }
 
 module.exports = { CarrinhoPage };

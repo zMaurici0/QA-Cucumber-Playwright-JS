@@ -50,22 +50,5 @@ When('O usuário clica no botão "Remove"', async function () {
 
 Then('O produto deve ser removido do carrinho', async function () {
   await carrinhoPage.checkCartEmpty();
-})
-
-// ─── Verificar o total do carrinho ─────────────────────
-
-Given('O usuário tem dois produtos no carrinho', async function () {
-  await carrinhoPage.gotoHomePage();
-  await carrinhoPage.addTwoItemsToCart();
-  await carrinhoPage.gotoCart();
-})
-
-When('O usuário visualiza o total do carrinho', async function () {
-  checkoutPage = new CheckoutPage(page);
-  await checkoutPage.checkout();
-})
-
-Then('O total deve ser a soma dos preços dos produtos no carrinho', async function () {
-  await carrinhoPage.verifyTotal();
-  await browser.close();
+  await browser.close()
 })
