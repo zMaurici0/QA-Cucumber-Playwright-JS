@@ -30,6 +30,18 @@ class LoginPage {
   async checkErrorMessage(){
     await expect(this.errorMessage).toBeVisible();
   }
+
+  async checkAllImages(){
+    const images = await this.page.locator('.inventory_item_img img');
+    const count = await images.count()
+    const firstImage = await images.nth(0).getAttribute('src');
+
+    for(let i = 1; i < count; i++){
+      const currentImage = await images.nth(i).getAttribute('src');
+      expect(currentImage).toBe(firstImage)
+    }
+  }
+
 }
 
 module.exports = { LoginPage };

@@ -32,11 +32,13 @@ QA-CUCUMBER-PLAYWRIGHT-JS/
 ├── tests/
 │   ├── features/
 │   │   ├── carrinho.feature
+│   │   ├── checkout.feature
 │   │   ├── login.feature
 │   │   └── logout.feature
 │   │
 │   └── step_definitions/
 │       ├── carrinho.js
+│       ├── checkout.js
 │       ├── login.js
 │       └── logout.js
 │
@@ -97,13 +99,28 @@ QA-CUCUMBER-PLAYWRIGHT-JS/
 
 - Adicionar um produto ao carrinho
 - Remover um produto do carrinho
-- Verificar se o total do carrinho corresponde à soma dos produtos
 
 **Resultados:**
 
 - Badge do carrinho atualizado corretamente
 - Produto visível/removido conforme a ação
-- Total do carrinho calculado e validado automaticamente
+
+---
+
+### 4️⃣ Checkout
+
+**Objetivo:** Validar o fluxo completo de finalização de compra, incluindo preenchimento de dados e verificação de valores.
+
+**Cenários:**
+
+- Verificar se o total exibido corresponde à soma dos produtos no carrinho
+- Finalizar uma compra com sucesso
+
+**Resultados:**
+
+- Total calculado e validado automaticamente contra os preços dos produtos
+- Redirecionamento correto para a página de confirmação de pedido
+- Validação da presença do container de checkout completo
 
 ---
 
@@ -126,11 +143,12 @@ QA-CUCUMBER-PLAYWRIGHT-JS/
 |---|---|
 | Testes de Login | 5 |
 | Testes de Logout | 1 |
-| Testes de Carrinho | 3 |
-| **Total de Cenários** | **9** |
+| Testes de Carrinho | 2 |
+| Testes de Checkout | 2 |
+| **Total de Cenários** | **10** |
 | Page Objects | 4 |
-| Step Definitions | 3 |
-| Feature Files | 3 |
+| Step Definitions | 4 |
+| Feature Files | 4 |
 
 ---
 
@@ -142,7 +160,7 @@ QA-CUCUMBER-PLAYWRIGHT-JS/
 | Framework BDD | Cucumber |
 | Linguagem | JavaScript |
 | Ambiente de Execução | Node.js |
-| Relatórios | Allure |
+| Relatórios | Allure, HTML Report |
 | Versionamento | Git, GitHub |
 
 ---
@@ -152,7 +170,7 @@ QA-CUCUMBER-PLAYWRIGHT-JS/
 ### Clonar o repositório
 
 ```bash
-git clone https://https://github.com/zMaurici0/QA-Cucumber-Playwright-JS.git
+git clone https://github.com/zMaurici0/QA-Cucumber-Playwright-JS.git
 ```
 
 ### Instalar as dependências
@@ -193,11 +211,23 @@ Rodar apenas os testes de carrinho:
 npx cucumber-js --tags @carrinho
 ```
 
+Rodar apenas os testes de checkout:
+
+```bash
+npx cucumber-js --tags @checkout
+```
+
 ### Gerar e abrir o relatório Allure
 
 ```bash
 allure generate allure-results --clean -o allure-report
 allure open allure-report
+```
+
+### Abrir o relatório HTML
+
+```bash
+open reports/cucumber-report.html
 ```
 
 ---

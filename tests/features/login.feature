@@ -21,7 +21,13 @@ Feature: Login
     When e insere um "username" válido e deixa o campo "password" vazio
     Then o login falha e uma mensagem de erro é exibida
 
-  Scenario: Login com usuário bloqueado
+  Scenario: Login com locked_out_user
     Given O usuário está na página de login
     When e insere um "username" bloqueado e uma senha válida
     Then o login falha e uma mensagem de erro é exibida
+
+  Scenario: Login com problem_user
+    Given O usuário está na página de login
+    When e insere um "username" com problema e um "password" válido
+    Then o login é bem-sucedido
+    And as imagens dos produtos são todas iguais
