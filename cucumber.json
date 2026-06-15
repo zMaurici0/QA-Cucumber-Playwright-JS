@@ -1,6 +1,6 @@
 {
   "default": {
-    "require": ["tests/step_definitions/*.js"],
+    "require": ["tests/step_definitions/**/*.js"],
     "paths": ["tests/features/*.feature"],
     "format": [
       "progress-bar",

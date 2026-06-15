@@ -62,6 +62,10 @@ class CarrinhoPage {
     await this.addToCartItem2.click();
   }
 
+  async addOneItemtoCart(){
+    await this.addToCartItem1.click();
+  }
+
 }
 
 module.exports = { CarrinhoPage };
