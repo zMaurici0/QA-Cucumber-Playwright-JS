@@ -13,14 +13,18 @@ class CheckoutPage {
     this.subtotal = page.locator('.summary_subtotal_label');
     this.finishButton = page.locator('[data-test="finish"]');
     this.checkoutComplete = page.locator('[data-test="checkout-complete-container"]');
+    this.errorMessage = page.locator('[data-test="error"]');
   }
 
-  async checkout(){
+  async gotoCheckout(){
     await this.chekoutButton.click();
+  }
+
+  async checkout(firstName,lastName, postalCode){
     await expect(this.page).toHaveURL('https://www.saucedemo.com/checkout-step-one.html');
-    await this.firstNameInput.fill('Teste');
-    await this.lastNameInput.fill('Automatizado');
-    await this.postalCodeInput.fill('12345');
+    await this.firstNameInput.fill(firstName);
+    await this.lastNameInput.fill(lastName);
+    await this.postalCodeInput.fill(postalCode);
     await this.continueButton.click();
   }
 
@@ -45,6 +49,10 @@ class CheckoutPage {
 
     expect(subtotal).toBe(total);
   }
+
+  async checkErrorMessage(){
+    await expect(this.errorMessage).toBeVisible();
+  } 
 }
 
 module.exports = { CheckoutPage };

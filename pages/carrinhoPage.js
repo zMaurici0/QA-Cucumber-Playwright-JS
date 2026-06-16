@@ -11,6 +11,7 @@ class CarrinhoPage {
     this.removeButton = page.locator('[data-test="remove-sauce-labs-backpack"]');
     this.addToCartItem1 = page.locator('[data-test="add-to-cart-sauce-labs-backpack"]');
     this.addToCartItem2 = page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]');
+    this.addToCartItem3 = page.locator('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]');
     this.precoItem1 = page.locator('[data-test="inventory-item-price"]').nth(0);
     this.precoItem2 = page.locator('[data-test="inventory-item-price"]').nth(1);
     this.subtotal = page.locator('.summary_subtotal_label');
@@ -28,12 +29,8 @@ class CarrinhoPage {
     await this.addToCartButton.click();
   }
 
-  async checkCartBadge(){
-    await expect(this.cartBadge).toHaveText('1');
-  }
-
-  async gotoCart(){
-    await this.cartLink.click();
+  async checkCartBadge(quantidade){
+    await expect(this.cartBadge).toHaveText(quantidade);
   }
 
   async confirmCartPage(){
@@ -57,15 +54,21 @@ class CarrinhoPage {
     await this.page.goto('https://www.saucedemo.com/inventory.html');
   }
 
+  async addOneItemtoCart(){
+    await this.addToCartItem1.click();
+  }
+
   async addTwoItemsToCart(){
     await this.addToCartItem1.click();
     await this.addToCartItem2.click();
   }
 
-  async addOneItemtoCart(){
+  async addMultipleItemsToCart(){
     await this.addToCartItem1.click();
+    await this.addToCartItem2.click();
+    await this.addToCartItem3.click();
   }
-
+  
 }
 
 module.exports = { CarrinhoPage };

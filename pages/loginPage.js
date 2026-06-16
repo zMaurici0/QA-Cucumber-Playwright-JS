@@ -15,8 +15,8 @@ class LoginPage {
     await this.loginButton.click();
   }
 
-  async goto(){
-    await this.page.goto('https://www.saucedemo.com/');
+  async goto(url){
+    await this.page.goto(url);
   }
 
   async confirmLoginPage(){
