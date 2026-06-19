@@ -1,12 +1,12 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { chromium } = require('@playwright/test');
-const { LoginPage } = require('../../pages/loginPage');
+const { LoginPage } = require('../../pages/LoginPage');
 
 // Login Válido 
 
 Given('O usuário está na página de login', async function () {
   this.loginPage = new LoginPage(this.page);
-  await this.loginPage.goto();
+  await this.loginPage.goto('https://www.saucedemo.com/');
   await this.loginPage.confirmLoginPage();
 });
 

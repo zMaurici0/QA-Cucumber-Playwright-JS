@@ -1,8 +1,8 @@
 const {Given, When, Then} = require('@cucumber/cucumber');
 const {chromium, _android} = require('@playwright/test');
 const {LoginPage} = require('../../pages/loginPage');
-const {CarrinhoPage} = require('../../pages/carrinhoPage');
-const {CheckoutPage} = require('../../pages/checkoutPage');
+const {CarrinhoPage} = require('../../pages/CarrinhoPage');
+const {CheckoutPage} = require('../../pages/CheckoutPage');
 
 // --- Adicionar produto ao carrinho 
 

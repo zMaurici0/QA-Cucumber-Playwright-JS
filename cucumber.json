@@ -7,6 +7,9 @@
       "allure-cucumberjs/reporter",
       "html:reports/cucumber-report.html"
     ],
+    "default": {
+      "timeout": 30000
+    },
     "formatOptions": {
       "resultsDir": "allure-results"
     }

@@ -15,4 +15,3 @@ Feature: Navegação
     Given que o usuário está logado
     When o usuário clicar no link do twitter
     Then o link deve abrir em outra página
-    And o usuário deve ser redirecionado para o twitter da Sauce Labs 

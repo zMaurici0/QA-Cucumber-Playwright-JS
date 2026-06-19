@@ -1,8 +1,8 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { chromium } = require('@playwright/test');
 const { LoginPage } = require('../../pages/loginPage');
-const { CheckoutPage } = require('../../pages/checkoutPage');
-const { CarrinhoPage } = require('../../pages/carrinhoPage');
+const { CheckoutPage } = require('../../pages/CheckoutPage');
+const { CarrinhoPage } = require('../../pages/CarrinhoPage');
 
 Given('O usuário tem dois produtos no carrinho', async function () {
 

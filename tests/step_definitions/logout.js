@@ -1,10 +1,10 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-const { LoginPage } = require('../../pages/loginPage');
-const { LogoutPage } = require('../../pages/logoutPage');
+const { LoginPage } = require('../../pages/LoginPage');
+const { LogoutPage } = require('../../pages/LogoutPage');
 
 Given('O usuário está logado', async function () {
   this.loginPage = new LoginPage(this.page);
-  await this.loginPage.goto();
+  await this.loginPage.goto('https://www.saucedemo.com/');
   await this.loginPage.login('standard_user', 'secret_sauce');
   await this.loginPage.confirmHomePage();
 });
@@ -22,7 +22,7 @@ Given('o usuário fez o logout', async function () {
   this.loginPage = new LoginPage(this.page);
   this.logoutPage = new LogoutPage(this.page);
 
-  await this.loginPage.goto();
+  await this.loginPage.goto('https://www.saucedemo.com/');
   await this.loginPage.login('standard_user', 'secret_sauce');
   await this.loginPage.confirmHomePage();
   await this.logoutPage.logout();

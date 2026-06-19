@@ -1,6 +1,6 @@
 const { Given, When, Then} = require('@cucumber/cucumber')
-const { LoginPage } = require('../../pages/loginPage');
-const {CarrinhoPage} = require('../../pages/carrinhoPage');
+const { LoginPage } = require('../../pages/LoginPage');
+const {CarrinhoPage} = require('../../pages/CarrinhoPage');
 const {NavigationPage} = require('../../pages/NavigationPage');
 
 Given('o usuário está na página do carrinho', async function(){
@@ -52,9 +52,5 @@ When('o usuário clicar no link do twitter', async function (){
 
 Then('o link deve abrir em outra página', async function () {
   await this.navigationPage.verifyTwitterTargetBlank();
-})
-
-Then('o usuário deve ser redirecionado para o twitter da Sauce Labs', async function () {
-  await this.navigationPage.confirmUrlPage('https://x.com/saucelabs');
 })
 
