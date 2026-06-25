@@ -5,6 +5,8 @@
 ![JavaScript](https://img.shields.io/badge/Language-JavaScript-yellow)
 ![Node.js](https://img.shields.io/badge/Runtime-Node.js-brightgreen)
 
+![alt text](/reports/image.png)
+
 Este projeto demonstra habilidades práticas de Quality Assurance (QA) aplicadas a testes Web, utilizando ferramentas modernas de automação com abordagem BDD (Behavior-Driven Development).
 
 O objetivo deste repositório é praticar atividades comuns do dia a dia de um QA Engineer, como automação de testes, escrita de cenários em Gherkin e verificação do comportamento esperado da aplicação.
