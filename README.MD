@@ -218,20 +218,6 @@ Rodar apenas os testes de checkout:
 ```bash
 npx cucumber-js --tags @checkout
 ```
-
-### Gerar e abrir o relatório Allure
-
-```bash
-allure generate allure-results --clean -o allure-report
-allure open allure-report
-```
-
-### Abrir o relatório HTML
-
-```bash
-open reports/cucumber-report.html
-```
-
 ---
 
 ## 🌐 Aplicação Testada
