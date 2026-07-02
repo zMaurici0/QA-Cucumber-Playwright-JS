@@ -7,6 +7,8 @@ class NavigationPage{
     this.allItensLink = page.locator('[data-test="inventory-sidebar-link"]')
     this.aboutLink = page.locator('[data-test="about-sidebar-link"]')
     this.twitterLink = page.locator('a[data-test="social-twitter"]');
+    this.facebookLink = page.locator('a[data-test="social-facebook"]');
+    this.linkedinLink = page.locator('a[data-test="social-linkedin"]');
   }
 
   async openMenuHamburguer(){
@@ -31,6 +33,22 @@ class NavigationPage{
 
   async verifyTwitterTargetBlank(){
     await expect(this.twitterLink).toHaveAttribute('target', '_blank');
+  }
+
+  async clickFacebookLink(){
+    await this.facebookLink.click();
+  }
+
+  async verifyFacebookTargetBlank(){
+    await expect(this.facebookLink).toHaveAttribute('target', '_blank');
+  }
+
+  async clickLinkedinLink(){
+    await this.linkedinLink.click();
+  }
+
+  async verifyLinkedinTargetBlank(){
+    await expect(this.linkedinLink).toHaveAttribute('target', '_blank');
   }
 }
 

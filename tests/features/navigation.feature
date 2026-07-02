@@ -14,4 +14,14 @@ Feature: Navegação
   Scenario: Validar link do Twitter
     Given que o usuário está logado
     When o usuário clicar no link do twitter
-    Then o link deve abrir em outra página
+    Then o twitter deve abrir em outra página
+  
+  Scenario: Validar link do Facebook
+    Given que o usuário está logado
+    When o usuário clicar no link do facebook
+    Then o facebook deve abrir em outra página
+  
+   Scenario: Validar link do Linkedin
+    Given que o usuário está logado
+    When o usuário clicar no link do linkedin
+    Then o linkedin deve abrir em outra página

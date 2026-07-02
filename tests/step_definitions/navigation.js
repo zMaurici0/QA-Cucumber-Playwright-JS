@@ -50,7 +50,27 @@ When('o usuário clicar no link do twitter', async function (){
   await this.navigationPage.clickTwitterLink();
 })
 
-Then('o link deve abrir em outra página', async function () {
+Then('o twitter deve abrir em outra página', async function () {
   await this.navigationPage.verifyTwitterTargetBlank();
 })
 
+
+// --- Validar link do Facebook
+
+When('o usuário clicar no link do facebook', async function (){
+  await this.navigationPage.clickFacebookLink();
+})
+
+Then('o facebook deve abrir em outra página', async function () {
+  await this.navigationPage.verifyFacebookTargetBlank();
+})
+
+// --- Validar link do Linkedin
+
+When('o usuário clicar no link do linkedin', async function (){
+  await this.navigationPage.clickLinkedinLink();
+})
+
+Then('o linkedin deve abrir em outra página', async function () {
+  await this.navigationPage.verifyLinkedinTargetBlank();
+})
