@@ -22,4 +22,4 @@ Feature: Boundary Testing
     Given O usuário tem dois produtos no carrinho
     And está na página de checkout
     When o usuário preenche os campos com caracteres especiais
-    Then o formulário deve aceitar ou exibir uma mensagem de erro coerente
+    Then o formulário deve aceitar ou exibir uma mensagem de erro
